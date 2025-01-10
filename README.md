@@ -28,6 +28,26 @@ The directory structure of the project is as follows:
 ├── README.md
 
 
+or 
+
+├── src/
+│   ├── backend/
+│   │   ├── app.js
+│   │   ├── profileRoutes.js
+│   │   ├── package.json
+│   ├── frontend/
+│   │   ├── ProfileForm.js
+│   │   ├── package.json
+│   ├── tests/
+│   │   ├── frontend/
+│   │   │   ├── profileCreation.test.js
+│   │   ├── backend/
+│   │   │   ├── api.test.js
+│   ├── .github/
+│   │   ├── workflows/
+│   │   │   ├── ci-pipeline.yml
+├── .gitignore
+├── README.md
 
 
 
