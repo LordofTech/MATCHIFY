@@ -1,0 +1,18 @@
+Sentry Logger [log]: Initializing Sentry: process: 4448, thread: main.
+Invalid Sentry Dsn: https://<my-actual-dsn>@oXXXXXX.ingest.sentry.io/YYYYYY
+Sentry Logger [log]: Running in CommonJS mode.
+Sentry Logger [debug]: @opentelemetry/api: Registered a global for diag v1.9.0.
+Sentry Logger [debug]: @opentelemetry/api: Registered a global for trace v1.9.0.
+Sentry Logger [debug]: @opentelemetry/api: Registered a global for context v1.9.0.
+Sentry Logger [debug]: @opentelemetry/api: Registered a global for propagation v1.9.0.
+
+
+  Sentry Integration Test
+Sentry Logger [error]: Transport disabled
+    √ should log an error to Sentry (44ms)
+
+
+  1 passing (58ms)
+
+Sentry Logger [log]: Flushing outcomes...
+Sentry Logger [log]: No outcomes to send

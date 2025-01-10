@@ -1,0 +1,19 @@
+{
+    "name": "darey3-fullstack",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "frontend",
+        "backend"
+    ],
+    "scripts": {
+        "start:frontend": "npm run start --workspace=frontend",
+        "start:backend": "npm run start --workspace=backend",
+        "start": "npm run start:frontend & npm run start:backend"
+    },
+    "dependencies": {
+        "@sentry/node": "^8.48.0",
+        "@sentry/tracing": "^7.114.0",
+        "mocha": "^11.0.1"
+    }
+}

@@ -1,0 +1,68 @@
+Flaky Test Analysis: Login Feature
+1. Introduction
+This document outlines the analysis of the provided flaky test script for the login feature, identifies the root causes of flakiness, and details the steps taken to resolve the issues.
+
+2. Root Causes of Flakiness
+Asynchronous Operations Not Properly Handled
+The test script relied on asynchronous operations (e.g., waiting for elements, network responses) but lacked proper synchronization.
+Without explicit waits, test execution finished before the UI or API responses were available, resulting in non-reproducible outcomes.
+
+Dynamic Element Selectors
+The test script used selectors that were not stable or updated dynamically (e.g., auto-generated IDs). Changes in the app's DOM caused selectors to break.
+Environmental Dependencies
+The srip assumed particular environmental setting (e.g., database configuration, network latency) which were non-controlled during the experiment.
+
+This led to the test to fail in various environments or under different conditions.
+
+Improper Error Handling
+Errors during test execution (e.g., element not found) were not gracefully handled. This resulted in catastrophic failures and loss of the possibility to retry or log important information.
+Hardcoded Credentials
+Test credentials hardcoded which make it hard updating the test to other environment or users.
+
+3. Steps Taken to Resolve Issues
+Implemented Proper Synchronization
+Applied explicit waits (e.g., waitForDisplayed, waitForEnabled to guarantee the preparedness of elements before directly operating on them.
+
+Implemented polling or mocked messages for the API-dependent tests, to resolve time conflicts.
+
+Stabilized Element Selectors
+Fixed the selectors so that they now are based on stable attributes (one example is data-testid or a class name) instead of dynamic IDs or those automatically generated.
+
+Controlled Test Environment
+Built a controlled test setup with known database states and simulated network replies.
+
+Unified setup and tear-down scripts to ensure reproducible preconditions and post-test cleanup.
+
+Improved Error Handling
+Added error-handling mechanisms to retry specific failures.
+Rescued detailed logs and screenshots during debugging when an error occurs.
+
+Parameterization of Test Data
+Replaced hardcoded credentials with environment variables or configuration files so that the test can be flexible to different environments.
+
+4. Refactored Script Overview
+The refactored test script included: The refactored test script included:
+
+Explicit waits for dynamic content.
+
+Stable and descriptive selectors for all elements.
+
+Modularized setup and teardown methods.
+
+Error handling for retries and better failure logs.
+
+Parameterized test data for flexibility.
+
+5. Challenges and Considerations
+Synchronization: Balancing test speed and test reliability depended on a judicious choice of wait times.
+
+Selector Stability: Ensuring selectors were consistent even as the UI evolved.
+
+Environment Configuration: Construction of closed test environments was labor-intensive, but it proved essential for reproducibility.
+
+6. Conclusion
+The root causes found out were tackled by means of improved synchronization, robust element selectors, regulated environments, and enhanced error handling. These improvements greatly enhanced the stability and resilience of the login test script.
+
+7. References
+[WebDriverIO Documentation](https: //webdriver.io/docs/api)
+//example.com/stable-ui-tests)

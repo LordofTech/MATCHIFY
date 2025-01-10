@@ -1,0 +1,38 @@
+# Node.js
+/node_modules/
+
+# Logs
+/tests/logs/
+
+# Screenshots from failed tests
+/tests/screenshots/
+
+# Sentry error capture debug logs
+/sentry-debug/
+
+# dotenv environment variables
+.env
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage directory used by tools like istanbul
+/coverage/
+
+# Build output
+/dist/
+/build/
+
+# Test reports and snapshots
+/test-results/
+/snapshots/

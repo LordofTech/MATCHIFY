@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Creation - Matchify</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .form-container { width: 300px; margin: 0 auto; }
+    input, select { width: 100%; margin-bottom: 10px; padding: 8px; }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Create Profile</h2>
+    <form id="profile-form">
+      <input type="text" id="name" placeholder="Name" required>
+      <input type="number" id="age" placeholder="Age" required>
+      <select id="gender" required>
+        <option value="" disabled selected>Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="text" id="location" placeholder="Location" required>
+      <input type="text" id="interests" placeholder="Interests" required>
+      <input type="file" id="profile-pic" accept="image/*" required>
+      <button type="submit">Create Profile</button>
+    </form>
+    <div id="message"></div>
+  </div>
+  <script>
+    document.getElementById('profile-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('message').innerText = 'Profile Created Successfully!';
+    });
+  </script>
+</body>
+</html>
